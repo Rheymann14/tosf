@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import '../css/app.css';
 import { initializeTheme } from '@/hooks/use-appearance';
+import { initializeLayout } from '@/hooks/use-layout';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -16,6 +17,11 @@ createInertiaApp({
             import.meta.glob('./pages/**/*.tsx'),
         ),
     setup({ el, App, props }) {
+        const defaultLayout =
+            props.initialPage.props.layout === 'navbar' ? 'navbar' : 'sidebar';
+
+        initializeLayout(defaultLayout);
+
         const root = createRoot(el);
 
         root.render(
@@ -27,7 +33,7 @@ createInertiaApp({
         );
     },
     progress: {
-        color: '#4B5563',
+        color: '#e60a0a',
     },
 });
 

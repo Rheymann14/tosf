@@ -6,7 +6,7 @@ export type AppLayoutProps = {
     breadcrumbs?: BreadcrumbItem[];
 };
 
-export type AppVariant = 'header' | 'sidebar';
+export type AppVariant = 'navbar' | 'sidebar';
 
 export type AuthLayoutProps = {
     children?: ReactNode;

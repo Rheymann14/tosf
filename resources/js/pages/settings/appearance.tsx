@@ -1,6 +1,7 @@
 import { Head } from '@inertiajs/react';
 import AppearanceTabs from '@/components/appearance-tabs';
 import Heading from '@/components/heading';
+import LayoutTabs from '@/components/layout-tabs';
 import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
 import { edit as editAppearance } from '@/routes/appearance';
@@ -28,6 +29,14 @@ export default function Appearance() {
                         description="Update your account's appearance settings"
                     />
                     <AppearanceTabs />
+                    <div className="space-y-4 pt-2">
+                        <Heading
+                            variant="small"
+                            title="Layout settings"
+                            description="Choose whether navigation uses the sidebar or the navbar layout"
+                        />
+                        <LayoutTabs />
+                    </div>
                 </div>
             </SettingsLayout>
         </AppLayout>
